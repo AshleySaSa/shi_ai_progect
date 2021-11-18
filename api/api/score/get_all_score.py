@@ -14,7 +14,7 @@ class get_all_score(APIView):
         course_id = request.data.get('course_id')
         score_list = []
         my_this_score = course_score.objects.filter(stud_id=openid,cou_id = course_id)
-        my_order_score = my_this_score.order_by('number')  # 按照number拍好次序
+        my_order_score = my_this_score.order_by('number')  # 按照number排好次序
         for var in my_order_score:
             score_list.append(var.real_score)
 
